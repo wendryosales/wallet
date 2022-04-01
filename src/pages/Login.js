@@ -13,30 +13,30 @@ class Login extends React.Component {
     };
   }
 
-  handleChange = ({ target }) => {
+  turnOn = () => {
+    const validation = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/;
     const { email, password } = this.state;
-    const validation = /^\w+([\\.-]?\w+)*@\w+([\\.-]?\w+)*(\.\w{2,3})+$/; // Regex de validação
-    if (target.name === 'email') {
-      this.setState({
-        email: target.value,
-      });
-    }
-
-    if (target.name === 'password') {
-      this.setState({
-        password: target.value,
-      });
-    }
-
     const emailValidated = email.match(validation);
-    const minCaracteres = 4;
-    const passwordValidated = password.length > minCaracteres;
-
+    const minCaracteres = 6;
+    const passwordValidated = password.length >= minCaracteres;
     if (emailValidated && passwordValidated) {
       this.setState({
         onOffButton: false,
       });
     } else { this.setState({ onOffButton: true }); }
+  }
+
+  handleChange = ({ target }) => {
+    if (target.name === 'email') {
+      this.setState({
+        email: target.value,
+      }, () => this.turnOn(target));
+    }
+    if (target.name === 'password') {
+      this.setState({
+        password: target.value,
+      }, () => this.turnOn(target));
+    }
   }
 
   handleClickSubmit = () => {
@@ -63,6 +63,7 @@ class Login extends React.Component {
                 aria-describedby="emailHelp"
                 placeholder="Enter email"
                 data-testid="email-input"
+                autoComplete="email"
                 onChange={ this.handleChange }
                 value={ email }
               />
@@ -84,6 +85,7 @@ class Login extends React.Component {
                 id="password"
                 placeholder="Password"
                 data-testid="password-input"
+                autoComplete="current-password"
                 onChange={ this.handleChange }
                 value={ password }
               />
