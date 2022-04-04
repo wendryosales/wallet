@@ -5,6 +5,7 @@ import Header from '../components/Header';
 import Balance from '../components/Balance';
 import getCurrencies from './API/getCurrencies';
 import { sendCurrencies } from '../actions';
+import Form from '../components/Form';
 
 class Wallet extends Component {
   async componentDidMount() {
@@ -16,13 +17,11 @@ class Wallet extends Component {
   render() {
     return (
       <div className="d-flex">
-        <div className="w-25">
-          navbar
-        </div>
-        <div className="w-75 bg-secondary">
+        <div className="bg-secondary">
           <Header />
-          <div className="d-flex">
+          <div className="d-flex flex-column">
             <Balance />
+            <Form />
           </div>
         </div>
       </div>
