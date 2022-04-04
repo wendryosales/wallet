@@ -1,15 +1,15 @@
-.balance { 
+.balance {
   background-color: rgb(78, 65, 240);
-  width: 32%;
-  height: 150px;
-  margin: 10px 0px;
   border-radius: 8px;
-  padding: 20px 30px;
+  height: 150px;
+  margin: 10px 0;
   overflow: hidden;
+  padding: 20px 30px;
+  width: 32%;
 }
 
 .balance img {
-  z-index: 0;
-  opacity: 0.3;
   height: 150px;
+  opacity: 0.3;
+  z-index: 0;
 }
