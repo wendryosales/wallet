@@ -1,4 +1,4 @@
-import { SET_USER, SET_WALLET } from './action.types';
+import { SET_USER, SET_CURRENCIES } from './action.types';
 
 // Coloque aqui suas actions
 export const userAction = (user) => ({
@@ -7,7 +7,7 @@ export const userAction = (user) => ({
   password: user.password,
 });
 
-export const walletAction = (personalData) => ({
-  type: SET_WALLET,
-  personalData,
+export const sendCurrencies = (currencies) => ({
+  type: SET_CURRENCIES,
+  currencies,
 });
