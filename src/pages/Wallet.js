@@ -6,6 +6,7 @@ import Balance from '../components/Balance';
 import getCurrencies from '../API/getCurrencies';
 import { sendCurrencies } from '../actions';
 import Form from '../components/Form';
+import Table from '../components/Table';
 
 class Wallet extends Component {
   async componentDidMount() {
@@ -22,6 +23,7 @@ class Wallet extends Component {
           <div className="d-flex flex-column">
             <Form />
             <Balance />
+            <Table />
           </div>
         </div>
       </div>
