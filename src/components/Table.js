@@ -49,4 +49,6 @@ const mapStateToProps = (state) => ({
   // email: state.user.email,
 }); */
 
-export default connect(mapStateToProps)(Table);
+// export default connect(mapStateToProps)(Table);
+
+export default Table;
