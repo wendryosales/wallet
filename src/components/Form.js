@@ -37,6 +37,7 @@ class Form extends Component {
 
     this.setState({
       value: 0,
+      description: '',
     });
   }
 
@@ -66,12 +67,12 @@ class Form extends Component {
     const { currencies } = this.props;
     const { value, description } = this.state;
     return (
-      <div className="d-flex">
+      <div className="d-flex align-items-start justify-content-around">
         <label htmlFor="value-input" className="form-label">
           Valor:
           <input
             type="text"
-            className="form-control is-invalid"
+            className="form-control is-valid"
             name="value"
             id="value-input"
             data-testid="value-input"
@@ -82,11 +83,11 @@ class Form extends Component {
             Validation message
           </div>
         </label>
-        <div className="mb-3">
+        <div className="">
           <label htmlFor="select-currency" className="form-label">
             Moeda:
             <select
-              className="form-select"
+              className="form-select is-valid"
               name="currency"
               id="select-currency"
               data-testid="currency-input"
@@ -100,11 +101,11 @@ class Form extends Component {
             </select>
           </label>
         </div>
-        <div className="mb-3">
+        <div className="">
           <label htmlFor="method-input" className="form-label">
             Metódo de pagamento:
             <select
-              className="form-select"
+              className="form-select is-valid"
               name="method"
               id="method-input"
               data-testid="method-input"
@@ -116,11 +117,11 @@ class Form extends Component {
             </select>
           </label>
         </div>
-        <div className="mb-3">
+        <div className="">
           <label htmlFor="tag-input" className="form-label">
             Categoria:
             <select
-              className="form-select"
+              className="form-select is-valid"
               name="tag"
               id="tag-input"
               data-testid="tag-input"
@@ -138,7 +139,7 @@ class Form extends Component {
           Descrição:
           <input
             type="text"
-            className="form-control is-invalid"
+            className="form-control is-valid"
             name="description"
             id="description-input"
             value={ description }
@@ -149,13 +150,15 @@ class Form extends Component {
             Validation message
           </div>
         </label>
-        <button
-          type="button"
-          className="btn btn-primary"
-          onClick={ this.handleClick }
-        >
-          Adicionar despesa
-        </button>
+        <div className="d-flex align-items-center" style={ { height: '70px' } }>
+          <button
+            type="button"
+            className="btn btn-dark"
+            onClick={ this.handleClick }
+          >
+            Adicionar despesa
+          </button>
+        </div>
       </div>
     );
   }

@@ -17,14 +17,14 @@ class Wallet extends Component {
 
   render() {
     return (
-      <div className="d-flex">
+      <div className="d-flex flex-column">
         <div className="bg-secondary">
           <Header />
-          <div className="d-flex flex-column">
-            <Form />
-            <Balance />
-            <Table />
-          </div>
+        </div>
+        <div className="d-flex flex-column">
+          <Form />
+          <Balance />
+          <Table />
         </div>
       </div>
     );
